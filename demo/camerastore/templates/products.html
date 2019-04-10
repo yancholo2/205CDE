@@ -1,0 +1,37 @@
+<ul>
+    {% for p in products %}
+    <li>
+        <div>
+            <a class="cbp-vm-image" href="/products/{{ p.id }}">
+                <div class="simpleCart_shelfItem">
+                    <div class="view view-first">
+                        <div class="inner_content clearfix">
+                            <div class="product_image">
+                                <img src="{{p.mainPhoto.url}}" class="img-responsive" alt=""/>
+                                <div class="mask">
+                                    <div class="info">Quick View</div>
+                                </div>
+                                <div class="product_container">
+                                    <div class="cart-left">
+                                        <p class="title">{{ p.title }}</p>
+                                    </div>
+                                    <div class="pricey">
+                                    <span class="item_price" >$ {{ p.price }}</span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="cbp-vm-details">
+                {{ p.shortDescription }}
+            </div>
+            <a class="cbp-vm-icon cbp-vm-add item_add add_to_cart_button" data-product_id="{{p.id}}" href="#">Add to cart</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+

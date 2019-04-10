@@ -1,0 +1,37 @@
+<h2>MY ORDERS </h2>
+{% if orders.is_empty() %}
+<div>
+    <h1>You do not have any orders yet!</h1>
+</div>
+{% else %}
+<div  class="cart-gd">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Creation Date</th>
+            <th>Total Price</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for o in orders %}
+        <tr>
+            <td>
+                <a href="/orders/{{o.id}}">{{ o.id }}</a>
+            </td>
+            <td>{{ o.createdAt }}</td>
+            <td>{{ o.total }}</td>
+            <td>{{ o.status }}</td>
+            <td>
+                <form action="/orders/refund/{{o.id}}" method="post">
+                    <input type="submit" value="Refund"/>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}

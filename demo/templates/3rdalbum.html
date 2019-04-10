@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <title>Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="static/style5.css">
+    <!-- Custom styles for album -->
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #ff6666;">
+        
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button" id="sidebarCollapse" class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+        <!--links-->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="ConfirmDel();">Home</a>
+                </li>    
+            </ul>
+        </div>
+    </nav>
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="static/image/logo4.png" heigh=100 width=228 alt="Logo">
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>{{session["username"]}}</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Album</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="1st">Taylor Swift</a>
+                    </li>
+                    <li>
+                        <a href="2nd">Fearless</a>
+                    </li>
+                    <li>
+                        <a href="3rd">Speak Now</a>
+                    </li>
+                    <li>
+                        <a href="4th">Red</a>
+                    </li>
+                    <li>
+                        <a href="5th">1989</a>
+                    </li>
+                    <li>
+                        <a href="6th">Reputation</a>
+                    </li>
+                        <a class="dropdown-item" href="#">TS7 Coming Soon!!!</a>
+                </ul>
+            </li>
+            <li>
+                <a href="karaoke">Karaoke</a>
+            </li>
+            <li>
+                <a href="rrr">Request</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="#" class="download" onclick="ConfirmDel();">Log Out</a>
+            </li>
+            <li>
+                <a href="store" >Back to Store Page</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- content -->
+    <a class="Product__ShareItem"  target="_blank" rel="noopener"><img src="static/image/SpeakNow.png" height=500 width=500 ></a>
+    <div class="col-md-7 dress-info">
+        <div class="dress-name">
+            <h2>Taylor Swift - "Speak Now" CD</h2>
+            <span>$</span><span>128</span>
+            <div class="clearfix"></div>
+            <p></p>
+        </div>
+        <div class="purchase">
+            <a class="cbp-vm-icon cbp-vm-add item_add add_to_cart_button" href="#" data-product_id="87f56258-aa1e-4926-b01b-68cd7b71cf0d">Buy</a>
+            <div class="clearfix"></div>
+        </div>
+
+    <!-- Description -->
+    <div class="clearfix"></div>
+    <div class="reviews-tabs">
+    <!-- Main component for a primary marketing message or call to action -->
+        <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
+        </ul>
+        <div class="tab-content responsive hidden-xs hidden-sm">
+            <div class="ProductMeta__Description Rte">
+            <div style="text-align: center;">
+                <span>This CD from Taylor Swift featuring 14 tracks, including the hits "Mine," "Sparks Fly," "Back to December" and more. Released October 25, 2010.Taylor Swift® "Speak Now" CD </span><br><br><span>℗©2010 Big Machine Records, LLC. All Rights Reserved. </span><br><span>Photography by Joseph Anthony Baker ©2010 Big Machine Records, LLC. All Rights Reserved. </span><br><br><span>1. Mine </span><br><span>2. Sparks Fly </span><br><span>3. Back to December </span><br><span>4. Speak Now </span><br><span>5. Dear John </span><br><span>6. Mean </span><br><span>7. The Story of Us </span><br><span>8. Never Grow Up </span><br><span>9. Enchanted </span><br><span>10. Better Than Revenge </span><br><span>11. Innocent </span><br><span>12. Haunted </span><br><span>13. Last Kiss </span><br><span>14. Long Live</span>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+        function ConfirmDel()
+        {
+           if(confirm("Are You Sure To Log Out？")){
+        location.replace("logout")
+
+             }
+        }
+
+    </script>
+            
+</body>
+
+</html>

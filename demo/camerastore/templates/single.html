@@ -1,0 +1,28 @@
+<div class="new-product">
+    <div class="col-md-5 zoom-grid">
+        <div class="flexslider">
+            <ul class="slides">
+                {% for ph in product.photos %}
+                <li data-thumb="{{ph.url}}">
+                    <div class="thumb-image"> <img src="{{ph.url}}" data-imagezoom="true" class="img-responsive" alt="" /> </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-7 dress-info">
+        <div class="dress-name">
+            <h3>{{ product.title }}</h3>
+            <span>$ {{ product.price }}</span>
+            <div class="clearfix"></div>
+            <p>{{ product.description }}</p>
+
+        </div>
+
+        <div class="purchase">
+            <a class="cbp-vm-icon cbp-vm-add item_add add_to_cart_button" href="#" data-product_id="{{product.id}}">Add To Cart</a>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

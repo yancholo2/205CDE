@@ -1,0 +1,11 @@
+<ul class="nav navbar-nav" id="category_menu">
+    <li><a href="/products">All</a></li>
+    {% for cat in categories %}
+    {% if cat.name != 'Uncategorized' %}
+    <li><a href="/categories/{{ cat.id }}" >{{ cat.title }}</a></li>
+    {% endif %}
+    {% endfor %}
+    <li><a href="#" id="show_search_box"><span class="glyphicon glyphicon-search"></span></a></li>
+</ul>
+
+

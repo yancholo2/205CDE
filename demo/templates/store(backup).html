@@ -1,0 +1,246 @@
+<html>
+
+<head>
+    <title>Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="static/style5.css">
+    <!-- Custom styles for album -->
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #ff6666;">
+        
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button" id="sidebarCollapse" class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+        <!--links-->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="ConfirmDel();">Home</a>
+                </li>    
+            </ul>
+            
+            
+            <form class="form-inline my-2 my-lg-0 ">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+    </nav>
+
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="static/image/logo4.png" heigh=100 width=228 alt="Logo">
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>Hi!!!!!!!!!!!!!{{session["username"]}}</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Album</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="1st">Taylor Swift</a>
+                    </li>
+                    <li>
+                        <a href="2nd">Fearless</a>
+                    </li>
+                    <li>
+                        <a href="3rd">Speak Now</a>
+                    </li>
+                    <li>
+                        <a href="4th">Red</a>
+                    </li>
+                    <li>
+                        <a href="5th">1989</a>
+                    </li>
+                    <li>
+                        <a href="6th">Reputation</a>
+                    </li>
+                        <a class="dropdown-item" href="#">TS7 Coming Soon!!!</a>
+                </ul>
+            </li>
+            <li>
+                <a href="karaoke">Karaoke</a>
+            </li>
+            <li>
+                <a href="rrr">Request</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="#" class="download" onclick="ConfirmDel();">Log Out</a>
+            </li>
+            <li>
+                <a href="store" >Back to Store Page</a>
+            </li>
+        </ul>
+    </nav>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 10rem;">
+                    <img src="static/image/taylorswift.jpg" height=150 width=80 class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Taylor Swift</h5>
+                    <p class="card-text">1st Album</p>
+                    <a href="1st" class="btn btn-primary">Detail</a>
+                    <div class="form-group">
+                        <form action="/payment" method="POST">
+                        <button class="btn btn-outline-warning" type="submit">Add to Cart!</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 10rem;">
+                    <img src="static/image/Fearless-Platinum-Edition.jpg" height=150 width=80 class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Fearless</h5>
+                    <p class="card-text">2nd Album</p>
+                    <a href="2nd" class="btn btn-primary">Detail</a>
+                    <div class="form-group">
+                        <form action="/cart/add" method="POST">
+                            <input name="quantity" type="hidden" value="1" />
+                            <input name="product_id" type="hidden" value="91801160" /> 
+                            <input name="product_name" type="hidden" value="Red Hat" /> 
+                            <button class="btn btn-outline-warning" type="submit">Add to Cart!</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 10rem;">
+                    <img src="static/image/SpeakNow.png" height=150 width=80 class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Speak Now</h5>
+                    <p class="card-text">3rd Album</p>
+                    <a href="3rd" class="btn btn-primary">Detail</a>
+                    <div class="form-group">
+                        <form action="/cart/add" method="POST">
+                            <input name="quantity" type="hidden" value="1" />
+                            <input name="product_id" type="hidden" value="91801160" /> 
+                            <input name="product_name" type="hidden" value="Red Hat" /> 
+                            <button class="btn btn-outline-warning" type="submit">Add to Cart!</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 10rem;">
+                    <img src="static/image/red.jpg" height=150 width=80 class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Red</h5>
+                    <p class="card-text">4th Album</p>
+                    <a href="4th" class="btn btn-primary">Detail</a>
+                    <div class="form-group">
+                        <form action="/cart/add" method="POST">
+                            <input name="quantity" type="hidden" value="1" />
+                            <input name="product_id" type="hidden" value="91801160" /> 
+                            <input name="product_name" type="hidden" value="Red Hat" /> 
+                            <button class="btn btn-outline-warning" type="submit">Add to Cart!</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 10rem;">
+                    <img src="static/image/1989cover.jpg" height=150 width=80 class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">1989</h5>
+                    <p class="card-text">5th Album</p>
+                    <a href="5th" class="btn btn-primary">Detail</a>
+                    <div class="form-group">
+                        <form action="/cart/add" method="POST">
+                            <input name="quantity" type="hidden" value="1" />
+                            <input name="product_id" type="hidden" value="91801160" /> 
+                            <input name="product_name" type="hidden" value="Red Hat" /> 
+                            <button class="btn btn-outline-warning" type="submit">Add to Cart!</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card" style="width: 10rem;">
+                    <img src="static/image/Reputation3.jpg" height=150 width=80 class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Reputation</h5>
+                    <p class="card-text">6th Album</p>
+                    <a href="6th" class="btn btn-primary">Detail</a>
+                    <div class="form-group">
+                        <form action="/cart/add" method="POST">
+                            <input name="quantity" type="hidden" value="1" />
+                            <input name="product_id" type="hidden" value="91801160" /> 
+                            <input name="product_name" type="hidden" value="Red Hat" /> 
+                            <button class="btn btn-outline-warning" type="submit">Add to Cart!</button>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+</div>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+        <a href="#">Back to top</a>
+        </p>
+        <p>©TStore2019</p>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+        function ConfirmDel()
+        {
+           if(confirm("Are You Sure To Log Out？")){
+        location.replace("logout")
+
+             }
+        }
+
+    </script>
+            
+</body>
+
+</html>

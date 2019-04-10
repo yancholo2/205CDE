@@ -1,0 +1,147 @@
+<html>
+
+<head>
+    <title>Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="static/style5.css">
+    <!-- Custom styles for album -->
+
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #ff6666;">
+        
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button" id="sidebarCollapse" class="navbar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+        <!--links-->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="ConfirmDel();">Home</a>
+                </li>    
+            </ul>
+            
+
+    </nav>
+
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="static/image/logo4.png" heigh=100 width=228 alt="Logo">
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>{{session["username"]}}</p>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Album</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="1st">Taylor Swift</a>
+                    </li>
+                    <li>
+                        <a href="2nd">Fearless</a>
+                    </li>
+                    <li>
+                        <a href="3rd">Speak Now</a>
+                    </li>
+                    <li>
+                        <a href="4th">Red</a>
+                    </li>
+                    <li>
+                        <a href="5th">1989</a>
+                    </li>
+                    <li>
+                        <a href="6th">Reputation</a>
+                    </li>
+                        <a class="dropdown-item" href="#">TS7 Coming Soon!!!</a>
+                </ul>
+            </li>
+            <li>
+                <a href="karaoke">Karaoke</a>
+            </li>
+            <li>
+                <a href="rrr">Request</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="#" class="download" onclick="ConfirmDel();">Log Out</a>
+            </li>
+            <li>
+                <a href="store" >Back to Store Page</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div>
+    <h2>Request</h2>
+    <p>Leave Your Request</p>
+    </div>
+    <form action="/leave_request" method = "post">
+    <div class="col-sm-30">
+        <div class="form-group">
+            <label for="Email">Username</label>
+            <input type="text" class="form-control" placeholder="Enter Your Username Here" name="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" >Request</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="req"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn float-left login_btn" name="submit">
+        </div>
+    </div>
+    </form>
+    </div>
+</div>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+        <a href="#">Back to top</a>
+        </p>
+        <p>©TStore2019</p>
+    </div>
+</footer>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+        function ConfirmDel()
+        {
+           if(confirm("Are You Sure To Log Out？")){
+        location.replace("logout")
+
+             }
+        }
+
+    </script>
+            
+</body>
+
+</html>
